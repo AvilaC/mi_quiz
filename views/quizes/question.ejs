@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h2>Bienvenido a Mi Quiz</h2>
+    <form method="get" action="/quizes/answer">
+    	<p>Pregunta: <%=pregunta%></p>
+    	<input type="text" name="respuesta" placeholder="Responda aquí" required>
+    	<input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

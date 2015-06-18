@@ -1,0 +1,6 @@
+.Ds_Store
+node_modules
+npm-debug.log
+quiz.sqlite
+.env
+_netrc
