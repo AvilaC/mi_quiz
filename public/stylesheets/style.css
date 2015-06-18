@@ -101,6 +101,17 @@ header, footer {
 	position: relative;
 	z-index: 1000;
 }
+@media (max-width: 760px){
+	.creditos {
+		padding: 0;
+		top: 0;
+	}
+	video {
+		visibility: hidden;
+		display: nome;
+		height: 75px;
+	}
+}
 
 /************ media-queri para Pc*******************/
 @media only screen and (min-width: 600px){
