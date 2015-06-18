@@ -1,8 +1,158 @@
+*, div {
+	margin: 0;
+	padding: 0;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 16px Georgia, serif;
+}
+#page-wrap:after {
+	content: "";
+	font-size: 16px;
+}
+#page-wrap {
+	color: white;
+	margin: 2% auto 0 auto;
+	position: relative;
+}
+#page-wrap > .main {
+	color: black;
+	border: solid 1px #999;
+	padding: 1%;
+	margin-bottom: 1px;	
+}
+section > div {
+	padding: 20px;	
+}
+.bienvenida h3 {	
+	color: darkgoldenrod;
+	font: bold 24px Tahoma;
+	margin-bottom: 10px;
+}.bienvenida p {	
+	color: cadetblue;
+	font: bold 18px Tahoma;
+}
+header, nav, section, footer {
+	background: #eee;
+	text-align: center;
+}
+nav span {
+	margin: 0 10px 0 0;
+}
+.creditos {
+	font: italic 16px Tahoma;
+	padding: 0 50px 0 0;
+	display: inline;
+	position: relative;
+	top: -50px;
+}
+.creditos:before {
+	content: url(/images/yo.png);
+}
+.respuesta p {
+	color: darkgoldenrod;
+	font: bold 17px Tahoma;
+}
+.lista a, .respuesta a {
+	color: cadetblue;
+	text-decoration: none;
+}
+.pregunta p:nth-child(1) {	
+	color: darkgoldenrod;
+	font: bold 17px Tahoma;
+}
+.lista {	
+	color: darkgoldenrod;
+	font: bold 18px Tahoma;
+	display: inline-block;
+}
+.lista td {
+	border-bottom: solid 1px thistle;
+}
+.lista a, .pregunta p:nth-child(2) {	
+	color: cadetblue;
+	font: bold 20px Tahoma;
+	margin-bottom: 8px;
+}
+.new label {
+	color: cadetblue;
+	font-size: 17px;
+}
+.new label:nth-child(2) {
+	padding-left: 10px;
+}
+.boton button{	
+	color: darkgoldenrod;
+	font: bold 17px Tahoma;
+	letter-spacing: 5px;
+	margin-top: 7px;
+	border:solid 1px cadetblue;
+	cursor: pointer;
+}
+.boton button:hover{
+	border-color: crimson;
+}
+footer a, nav a {
+	color: tomato;
+	font: bold 16px Tahoma;
+	margin-left: 15px;
+	text-decoration: none;
+}
+header, footer {
+	position: relative;
+	z-index: 1000;
 }
 
-a {
-  color: #00B7FF;
+/************ media-queri para Pc*******************/
+@media only screen and (min-width: 600px){
+	body {
+	background: #999;
+    }
+	#page-wrap:after {
+		content: "Wide Layaut";
+	}
+	nav {
+		float: left;
+		width: 15%;
+		position: absolute;
+		top: 0;
+		bottom: 17px;
+	}
+	nav div {
+		text-align: left;
+		margin: 35% 0 0 10%;		
+	}
+	nav span {
+		margin: 0 100px 0 0;
+	}
+	section {
+		float: right;
+		width: 80%;
+		min-height: 200px;
+	}
+	footer {
+		padding: 10px;
+		clear: both;
+		display: block;
+		border-top: solid 1px #999;
+	}
+}
+/************ media-queri para smartphone*******************/
+@media only screen and (max-width: 480px){
+	body {
+	background: #333;
+	font-size: x-large;
+	}
+	#page-wrap:after {
+		content: "Smarphone Layaut";
+	}
+	h2 span, section h3 {
+		display: none;
+	}
+	footer, input {
+		font-size: large;
+	}
+	video {
+		visibility: visible;
+		height: 175px;
+	}
 }
