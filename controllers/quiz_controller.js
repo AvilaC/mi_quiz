@@ -11,10 +11,22 @@ exports.load = function(req,res, next, quizId){
 	}).catch(function(error){next(Error)});
 };
 
-exports.index = function(req, res) {
-	models.Quiz.findAll().then(function(quizes) {
-        res.render('quizes', {quizes: quizes});
-	})
+//exports.index = function(req, res) {
+//	models.Quiz.findAll().then(function(quizes) {
+//        res.render('quizes', {quizes: quizes});
+//	})
+//};
+
+exports.index = function(req, res){
+	if(req.query.search) {
+		models.Quiz.findAll({where:["pregunta like ?", '%' + req.query.search + '%'], order:'pregunta ASC'}).then(function(quizes) { //ASC mostrará los resultados en orden ascendente.
+			res.render('quizes/busqueda', {quizes: quizes});
+		}).catch(function(error) {next(error);});
+	} else {
+		models.Quiz.findAll().then(function(quizes){
+			res.render('quizes', {quizes: quizes});
+		}).catch(function(error) { next(error);});
+	}	
 };
 
 exports.show = function(req, res) {
