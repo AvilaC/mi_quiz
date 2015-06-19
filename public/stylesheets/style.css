@@ -73,12 +73,21 @@ nav span {
 	font: bold 20px Tahoma;
 	margin-bottom: 8px;
 }
+.lista .tema{
+	font-size: 15px;
+	text-align: left;
+	padding: 0 10px;
+}
 .new label {
 	color: cadetblue;
 	font-size: 17px;
 }
 .new label:nth-child(2) {
 	padding-left: 10px;
+}
+.new select {
+	width: 105px;
+	margin-right: 22px;
 }
 .errorMs {
 	color: darkgoldenrod;

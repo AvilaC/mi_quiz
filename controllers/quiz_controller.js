@@ -12,8 +12,12 @@ exports.load = function(req,res, next, quizId){
 };
 
 exports.index = function(req, res){
-	if(req.query.search) {
-		models.Quiz.findAll({where:["pregunta like ?", '%' + req.query.search + '%'], order:'pregunta ASC'}).then(function(quizes) { //ASC mostrará los resultados en orden ascendente.
+//	if(req.query.search) {
+//		models.Quiz.findAll({where:["pregunta like ?", '%' + req.query.search + '%'], order:'pregunta ASC'})
+	if (req.param('search')) {
+        var texto_a_buscar = '%' + req.param('search').replace(/ /g, "%") + '%';
+        models.Quiz.findAll({where: ['pregunta like ?', texto_a_buscar], order:'pregunta ASC'})	
+		.then(function(quizes) { 
 			res.render('quizes/busqueda', {quizes: quizes, errors:[]});
 		}).catch(function(error) {next(error);});
 	} else {
@@ -39,7 +43,7 @@ exports.answer = function(req,res){
 
 exports.new = function(req,res) {
 	var quiz = models.Quiz.build(
-		{pregunta: 'Pregunta', respuesta: 'Respuesta'}
+		{pregunta: 'Pregunta', respuesta: 'Respuesta', tematica: 'Tema'}
 	);
 	res.render('quizes/new', {quiz: quiz, errors:[]});
 };
@@ -54,7 +58,7 @@ exports.create = function(req, res) {
                 res.render('quizes/new', {quiz: quiz, errors: err.errors});
             } else {
                 quiz 
-                .save({fields: ["pregunta", "respuesta"]})
+                .save({fields: ["pregunta", "respuesta", "tematica"]})
                 .then( function(){ res.redirect('/quizes')}) 
             }      
         }
@@ -69,6 +73,7 @@ exports.edit = function(req,res) {
 exports.update = function(req, res) {
 	req.quiz.pregunta  = req.body.quiz.pregunta;
 	req.quiz.respuesta = req.body.quiz.respuesta;
+	req.quiz.tematica =  req.body.quiz.tematica;
 	req.quiz
 	.validate()
 	.then(
@@ -77,7 +82,7 @@ exports.update = function(req, res) {
 			    res.render('quizes/edit', {quiz: req.quiz, errors: err.errors});
 		    } else {
 			    req.quiz
-			    .save( {fields: ["pregunta", "respuesta"]})
+			    .save( {fields: ["pregunta", "respuesta", "tematica"]})
 			    .then( function(){ res.redirect('/quizes');});
 		    }
 		}
