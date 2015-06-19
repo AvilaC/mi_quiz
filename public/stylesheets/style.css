@@ -80,6 +80,13 @@ nav span {
 .new label:nth-child(2) {
 	padding-left: 10px;
 }
+.errorMs {
+	color: darkgoldenrod;
+	font: bold 17px Courier;
+}
+.errorMs span {
+	color: tomato;
+}
 .boton button{	
 	color: darkgoldenrod;
 	font: bold 17px Tahoma;

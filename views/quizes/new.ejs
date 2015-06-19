@@ -1,3 +1,11 @@
+<% if (errors.length) { %>
+  <p class='errorMs'>
+	Corregir errores:<br/>
+	<% for (var i in errors) { %>
+	   <span> <%= errors[i].message %> </span><br/>
+	<% } %>
+  </p>
+<% } %>		
 <form method="post" action="/quizes/create" class="lista new">
     <p>Añadir pregunta:</p>         
     <% include _form.ejs %>
