@@ -23,12 +23,6 @@ body {
 section > div {
 	padding: 20px;	
 }
-/*.right {
-	font: bold 20px Tahoma;
-	position: absolute;
-	right: 15px;
-	top: 15px;
-}*/
 .right a, .log {		
 	color: darkgoldenrod;
 	font: bold 20px Tahoma;
@@ -36,9 +30,12 @@ section > div {
 	letter-spacing: 2px;
 	text-shadow: 1px 1px #22dde3,2px 2px tomato;
 }
-.right span {	
+.right span, .field label {	
 	color: cadetblue;
 	font: normal 18px Tahoma;	
+}
+.login {
+	
 }
 .bienvenida h3 {	
 	color: darkgoldenrod;
@@ -103,9 +100,11 @@ nav span {
 	color: cadetblue;
 	font: bold italic 16px Tahoma;
 }
-.comment p:nth-child(2){
-	color: #091036;
-	font: normal 16px Courier;
+.comment p:nth-child(n+2){
+	color: #033669;
+	font: bold 16px Courier;
+	max-width: 400px;
+	margin: 0 auto;
 } 
 .new label:nth-child(2) {
 	padding-left: 10px;
