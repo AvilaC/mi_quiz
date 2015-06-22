@@ -82,6 +82,14 @@ nav span {
 	color: cadetblue;
 	font-size: 17px;
 }
+.comment p:nth-child(1){
+	color: cadetblue;
+	font: bold italic 16px Tahoma;
+}
+.comment p:nth-child(2){
+	color: #091036;
+	font: normal 16px Courier;
+} 
 .new label:nth-child(2) {
 	padding-left: 10px;
 }
@@ -96,7 +104,7 @@ nav span {
 .errorMs span {
 	color: tomato;
 }
-.boton button{	
+.boton {	
 	color: darkgoldenrod;
 	font: bold 17px Tahoma;
 	letter-spacing: 5px;
@@ -104,7 +112,7 @@ nav span {
 	border:solid 1px cadetblue;
 	cursor: pointer;
 }
-.boton button:hover{
+.boton:hover {
 	border-color: crimson;
 }
 footer a, nav a {
