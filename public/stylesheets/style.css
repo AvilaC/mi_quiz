@@ -23,6 +23,23 @@ body {
 section > div {
 	padding: 20px;	
 }
+/*.right {
+	font: bold 20px Tahoma;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}*/
+.right a, .log {		
+	color: darkgoldenrod;
+	font: bold 20px Tahoma;
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px #22dde3,2px 2px tomato;
+}
+.right span {	
+	color: cadetblue;
+	font: normal 18px Tahoma;	
+}
 .bienvenida h3 {	
 	color: darkgoldenrod;
 	font: bold 24px Tahoma;
