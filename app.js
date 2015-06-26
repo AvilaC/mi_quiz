@@ -36,6 +36,17 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(function(req,res,next){
+    if(req.session.user){
+        if((Date.now() - req.session.user.finSesion) > 120000){
+            delete req.session.user;
+        }else{
+            req.session.user.finSesion = Date.now();
+        }
+    }
+    next();
+});
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler
